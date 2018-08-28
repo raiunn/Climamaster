@@ -30,10 +30,12 @@ class WeatherViewController: UIViewController,CLLocationManagerDelegate {
         super.viewDidLoad()
         
         
-        //TODO:Set up the location manager here.デリゲートをselfに、精度を決め、常に要求を承認する
+    //TODO:Set up the location manager here.デリゲートをselfに、精度を決め、常に要求を承認する
     locationManager.delegate = self
     locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
     locationManager.requestAlwaysAuthorization()
+    //infoのソースコードにセキュリティオーバーライドを挿入、
+    locationManager.startUpdatingLocation()
     }
     
     
